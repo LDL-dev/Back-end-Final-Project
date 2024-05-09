@@ -1,0 +1,1 @@
+Final project for my Back-end Development education. I designed and developed a RESTful API for an online booking app. Stack used: Node.js, Express.js, Prisma (ORM) and Supabase as a Backend-as-a-Service.

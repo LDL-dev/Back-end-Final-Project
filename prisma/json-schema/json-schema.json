@@ -1,0 +1,209 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "User": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "profilePicture": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "username",
+        "password",
+        "name",
+        "email",
+        "phoneNumber",
+        "profilePicture"
+      ]
+    },
+    "Host": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "profilePicture": {
+          "type": "string"
+        },
+        "aboutMe": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "username",
+        "password",
+        "name",
+        "email",
+        "phoneNumber",
+        "profilePicture",
+        "aboutMe"
+      ]
+    },
+    "Property": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "pricePerNight": {
+          "type": "number"
+        },
+        "bedroomCount": {
+          "type": "integer"
+        },
+        "bathRoomCount": {
+          "type": "integer"
+        },
+        "maxGuestCount": {
+          "type": "integer"
+        },
+        "rating": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "hostId",
+        "title",
+        "description",
+        "location",
+        "pricePerNight",
+        "bedroomCount",
+        "bathRoomCount",
+        "maxGuestCount",
+        "rating"
+      ]
+    },
+    "Amenity": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "Booking": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "checkinDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "checkoutDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "numberOfGuests": {
+          "type": "integer"
+        },
+        "totalPrice": {
+          "type": "integer"
+        },
+        "bookingStatus": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "userId",
+        "propertyId",
+        "checkinDate",
+        "checkoutDate",
+        "numberOfGuests",
+        "totalPrice",
+        "bookingStatus"
+      ]
+    },
+    "Review": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "rating": {
+          "type": "integer"
+        },
+        "comment": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "userId",
+        "propertyId",
+        "rating",
+        "comment"
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "user": {
+      "$ref": "#/definitions/User"
+    },
+    "host": {
+      "$ref": "#/definitions/Host"
+    },
+    "property": {
+      "$ref": "#/definitions/Property"
+    },
+    "amenity": {
+      "$ref": "#/definitions/Amenity"
+    },
+    "booking": {
+      "$ref": "#/definitions/Booking"
+    },
+    "review": {
+      "$ref": "#/definitions/Review"
+    }
+  }
+}
